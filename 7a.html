@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Properties & Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+        #info {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Using Document Object Properties & Methods</h1>
+
+    <p id="info"></p>
+    <button onclick="changeContent()">Change Content</button>
+    <button onclick="changeBackground()">Change Background Color</button>
+    <button onclick="addElement()">Add New Element</button>
+
+    <script>
+        // Accessing document properties
+        document.getElementById("info").innerHTML = 
+            "Page Title: " + document.title + "<br>" +
+            "Page URL: " + document.URL;
+
+        // Changing HTML content dynamically
+        function changeContent() {
+            document.getElementById("info").innerHTML = "Content changed using JavaScript!";
+        }
+
+        // Changing background color dynamically
+        function changeBackground() {
+            document.body.style.backgroundColor = "lightyellow";
+        }
+
+        // Adding a new element to the DOM
+        function addElement() {
+            let newPara = document.createElement("p");
+            newPara.innerHTML = "This is a new paragraph added dynamically!";
+            document.body.appendChild(newPara);
+        }
+    </script>
+
+</body>
+</html>
